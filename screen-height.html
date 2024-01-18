@@ -1,0 +1,14 @@
+<body>
+    <!-- Add this to your own app.html or template.html to get a screen-height variable in your body css and a screenHeight variable in the window. This works better than 100vh and works in mobile -->
+    <div style="height: 0; width: 0; position: fixed; bottom: 0" id="_screen_height_anchor"></div>
+    <script>
+        window.anchorHeight = document.getElementById('_screen_height_anchor').getBoundingClientRect().top;
+        document.body.style.setProperty('--screen-height', `${window.anchorHeight}px`);
+        window.refreshAnchor = refreshAnchor; // just adding it to the window so you can call it whenever you need
+        window.addEventListener('resize', refreshAnchor);
+        function refreshAnchor() {
+            window.anchorHeight = document.getElementById('_screen_height_anchor').getBoundingClientRect().top;
+            document.body.style.setProperty('--screen-height', `${window.anchorHeight}px`);
+        }
+    </script>
+</body>
