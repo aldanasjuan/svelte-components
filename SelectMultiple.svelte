@@ -240,7 +240,6 @@
 	.select {
 		width: 100%;
 		position: relative;
-		border-radius: 0.25rem;
 		outline: none;
 	}
 	.select.disabled {
